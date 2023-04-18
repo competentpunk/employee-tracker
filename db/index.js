@@ -1,4 +1,5 @@
 const connection = require("./connection");
+const cTable = require('console.table');
 
 const db = {
     getAllEmployees(){
@@ -11,4 +12,11 @@ const db = {
     }
 }
 
-module.exports = db;
+const table = cTable.getTable([
+    {
+      name: employee.name,
+      email: employee.email
+    },
+  ]);
+  
+  console.log(table);
